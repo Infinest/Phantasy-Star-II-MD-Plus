@@ -128,11 +128,4 @@ WRITE_MD_PLUS_FUNCTION:
 	move.w  #$0000,(MD_PLUS_OVERLAY_PORT)	; Close interface
 	rts
 
-IS_CD_AUDIO_PLAYING_FUNCTION:
-	move.w  #$CD54,(MD_PLUS_OVERLAY_PORT)	; Open interface
-	move.w  #$1600,(MD_PLUS_CMD_PORT)		; Send status request command to interface
-	move.b	(MD_PLUS_RESPONSE_PORT),D1
-	move.w  #$0000,(MD_PLUS_OVERLAY_PORT)	; Close interface
-	rts
-
 ; Data: --------------------------------------------------------------------------------------
